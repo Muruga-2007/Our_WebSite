@@ -40,3 +40,8 @@ externalPort = 80
 [[ports]]
 localPort = 32875
 externalPort = 3001
+
+[deployment]
+deploymentTarget = "static"
+build = ["npm", "--prefix", "frontend", "run", "build"]
+publicDir = "frontend/build"
