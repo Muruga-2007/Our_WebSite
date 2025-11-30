@@ -35,25 +35,26 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 pb-20">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50/50 to-white pointer-events-none" />
-      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-blue-200/30 rounded-full blur-[100px] floating-orb" />
-      <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-purple-200/20 rounded-full blur-[100px] floating-orb" style={{ animationDelay: '1s' }} />
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-24 px-4">
+      {/* Light blue and white gradient background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50 via-blue-100/30 to-white pointer-events-none" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none" />
+      <div className="absolute left-0 bottom-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-100/40 via-blue-50/30 to-transparent pointer-events-none" />
+      
+      {/* Light blue floating orbs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-gradient-to-br from-blue-200/30 to-blue-100/20 rounded-full blur-[100px] floating-orb" />
+      <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-gradient-to-tr from-blue-200/30 to-blue-100/20 rounded-full blur-[100px] floating-orb" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-r from-blue-100/15 to-blue-50/15 rounded-full blur-[120px] floating-orb" style={{ animationDelay: '2s' }} />
 
-      <div className="container px-4 md:px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         <div ref={heroContentRef} className="max-w-2xl space-y-8 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-medium">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500">
+              Master Your
             </span>
-            AI-Powered LSRW Training Platform
-          </div>
-
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-            Master Your <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
+            <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400">
               Interview Skills.
             </span>
           </h1>
@@ -62,7 +63,7 @@ export default function Hero() {
             The powerful, student-friendly platform to excel in corporate LSRW rounds through practice, precision, and performance.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-stretch sm:items-center">
             <Button size="lg" variant="premium" magnetic>
               Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

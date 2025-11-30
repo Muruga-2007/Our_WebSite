@@ -21,7 +21,7 @@ const FeatureCard = ({ icon: Icon, title, description, color, delay }) => {
 
     return (
         <div ref={ref} className="preserve-3d h-full">
-            <Card className="h-full relative overflow-hidden border-slate-100 hover:border-blue-100 transition-colors bg-white group">
+            <Card className="h-full relative overflow-hidden border-blue-100 hover:border-blue-300 transition-colors bg-white group shadow-sm">
                 <div ref={shineRef} className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/40 via-white/0 to-transparent opacity-0 z-20" />
                 <CardContent className="p-8 relative z-10 h-full flex flex-col">
                     <div className={`w-12 h-12 rounded-xl ${colorClasses[color] || colorClasses.blue} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ease-out transform-style-3d translate-z-[20px]`}>
@@ -87,8 +87,8 @@ export default function Features() {
 
     return (
         <>
-            <section id="skills" ref={lsrwRef} className="py-20 bg-white relative overflow-hidden">
-                <div className="container px-4 md:px-6 relative z-10">
+            <section id="skills" ref={lsrwRef} className="py-20 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden">
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-10">
                     <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
                             Master All Four <span className="text-primary">LSRW Skills</span>
@@ -98,22 +98,22 @@ export default function Features() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto justify-items-center">
                         {lsrwSkills.map((skill, idx) => {
                             const colorClasses = {
-                                blue: "border-blue-200 bg-blue-50/50 hover:bg-blue-50",
-                                green: "border-green-200 bg-green-50/50 hover:bg-green-50",
-                                purple: "border-purple-200 bg-purple-50/50 hover:bg-purple-50",
-                                orange: "border-orange-200 bg-orange-50/50 hover:bg-orange-50",
+                                blue: "border-blue-200 bg-blue-50/70 hover:bg-blue-50",
+                                green: "border-blue-200 bg-blue-50/70 hover:bg-blue-50",
+                                purple: "border-blue-200 bg-blue-50/70 hover:bg-blue-50",
+                                orange: "border-blue-200 bg-blue-50/70 hover:bg-blue-50",
                             };
                             const iconColors = {
                                 blue: "text-blue-600 bg-blue-100",
-                                green: "text-green-600 bg-green-100",
-                                purple: "text-purple-600 bg-purple-100",
-                                orange: "text-orange-600 bg-orange-100",
+                                green: "text-blue-600 bg-blue-100",
+                                purple: "text-blue-600 bg-blue-100",
+                                orange: "text-blue-600 bg-blue-100",
                             };
                             return (
-                                <div key={idx} className={`lsrw-card p-6 rounded-2xl border-2 ${colorClasses[skill.color]} transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}>
+                                <div key={idx} className={`lsrw-card p-6 rounded-2xl border-2 ${colorClasses[skill.color]} transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col items-center text-center`}>
                                     <div className={`w-12 h-12 rounded-xl ${iconColors[skill.color]} flex items-center justify-center mb-4`}>
                                         <skill.icon className="w-6 h-6" />
                                     </div>
@@ -126,8 +126,8 @@ export default function Features() {
                 </div>
             </section>
 
-            <section id="features" ref={containerRef} className="py-24 bg-slate-50 relative overflow-hidden">
-                <div className="container px-4 md:px-6 relative z-10">
+            <section id="features" ref={containerRef} className="py-24 bg-gradient-to-b from-blue-50 via-blue-100/20 to-blue-50 relative overflow-hidden">
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-10">
                     <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
                             Powerful features for <br/>
@@ -138,7 +138,7 @@ export default function Features() {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-stretch">
                         {features.map((feature, idx) => (
                             <div key={idx} className="feature-card-wrapper">
                                 <FeatureCard {...feature} delay={idx * 0.1} />
@@ -149,45 +149,45 @@ export default function Features() {
             </section>
 
             <section className="py-20 bg-white relative overflow-hidden">
-                <div className="container px-4 md:px-6">
-                    <div className="bg-gradient-to-r from-primary to-blue-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-                        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+                    <div className="bg-gradient-to-r from-blue-50 via-blue-100/50 to-white rounded-3xl p-8 md:p-12 text-slate-900 relative overflow-hidden border border-blue-100">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200/20 rounded-full -translate-y-1/2 translate-x-1/2" />
+                        <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-200/20 rounded-full translate-y-1/2 -translate-x-1/2" />
                         
                         <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">
                             <div className="space-y-4">
-                                <h3 className="text-3xl md:text-4xl font-bold">Company-Specific Practice</h3>
-                                <p className="text-white/80 text-lg">
+                                <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Company-Specific Practice</h3>
+                                <p className="text-slate-600 text-lg">
                                     Prepare for interviews at top companies with role-specific questions for Tech, HR, Sales, and Marketing positions.
                                 </p>
                                 <div className="flex flex-wrap gap-3 pt-4">
                                     {["Tech Roles", "HR Interview", "Sales", "Marketing"].map((role, i) => (
-                                        <span key={i} className="px-4 py-2 bg-white/20 rounded-full text-sm font-medium backdrop-blur-sm">
+                                        <span key={i} className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-slate-700 border border-blue-200/50 shadow-sm hover:bg-white hover:shadow-md transition-all">
                                             {role}
                                         </span>
                                     ))}
                                 </div>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
-                                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                                    <Target className="w-8 h-8 mx-auto mb-2" />
-                                    <p className="font-bold text-2xl">100+</p>
-                                    <p className="text-sm text-white/70">Companies</p>
+                                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <Target className="w-8 h-8 mx-auto mb-2 text-blue-600" />
+                                    <p className="font-bold text-2xl text-slate-900">100+</p>
+                                    <p className="text-sm text-slate-600">Companies</p>
                                 </div>
-                                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                                    <Video className="w-8 h-8 mx-auto mb-2" />
-                                    <p className="font-bold text-2xl">Expert</p>
-                                    <p className="text-sm text-white/70">Webinars</p>
+                                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <Video className="w-8 h-8 mx-auto mb-2 text-blue-600" />
+                                    <p className="font-bold text-2xl text-slate-900">Expert</p>
+                                    <p className="text-sm text-slate-600">Webinars</p>
                                 </div>
-                                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                                    <Zap className="w-8 h-8 mx-auto mb-2" />
-                                    <p className="font-bold text-2xl">Quick</p>
-                                    <p className="text-sm text-white/70">Revision</p>
+                                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <Zap className="w-8 h-8 mx-auto mb-2 text-blue-600" />
+                                    <p className="font-bold text-2xl text-slate-900">Quick</p>
+                                    <p className="text-sm text-slate-600">Revision</p>
                                 </div>
-                                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                                    <Users className="w-8 h-8 mx-auto mb-2" />
-                                    <p className="font-bold text-2xl">1:1</p>
-                                    <p className="text-sm text-white/70">Counselling</p>
+                                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <Users className="w-8 h-8 mx-auto mb-2 text-blue-600" />
+                                    <p className="font-bold text-2xl text-slate-900">1:1</p>
+                                    <p className="text-sm text-slate-600">Counselling</p>
                                 </div>
                             </div>
                         </div>
